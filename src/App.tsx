@@ -2,10 +2,18 @@ import React from 'react';
 
 import Education from 'components/Education';
 import Header from 'components/Header';
+import History from 'components/History';
 import Section from 'components/Section';
 import Strengths from 'components/Strengths';
 import Skills from 'components/Skills';
-import { education, header, skills, strengths, summary } from 'content';
+import {
+  education,
+  header,
+  history,
+  skills,
+  strengths,
+  summary,
+} from 'content';
 
 function App() {
   return (
@@ -20,7 +28,9 @@ function App() {
         <Skills content={skills} />
       </Section>
 
-      <div className='section sidebar'>history</div>
+      <Section sidebar title='History'>
+        <History content={history} />
+      </Section>
 
       <Section title='Experience'>
         <Strengths content={strengths} />
