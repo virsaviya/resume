@@ -56,3 +56,14 @@ body {
 .sidebar {
   grid-column: sidebar;
 }
+
+.subsection {
+  /* background-color: #ffbce2; */
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
