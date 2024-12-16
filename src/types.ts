@@ -33,10 +33,10 @@ export interface Skills_t {
   design: Array<string>;
 }
 
-export interface Strengths_t {
+export interface Strength_t {
   id: string;
-  title: string;
-  outcomes: Array<string>;
+  name: string;
+  points: Array<string>;
 }
 
 export type Summary_t = string;
