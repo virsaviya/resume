@@ -17,7 +17,7 @@ import {
 
 function App() {
   return (
-    <div className='grid layout'>
+    <div className='layout'>
       <Header content={header} />
 
       <Section title='Summary'>
@@ -33,7 +33,9 @@ function App() {
       </Section>
 
       <Section title='Experience'>
-        <Strengths content={strengths} />
+        {strengths.map((strength) => (
+          <Strengths key={strength.id} strength={strength} />
+        ))}
       </Section>
 
       <Section sidebar title='Education'>

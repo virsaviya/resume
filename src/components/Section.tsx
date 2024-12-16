@@ -9,7 +9,9 @@ export default function Section({
   children: React.ReactNode;
   sidebar?: boolean;
 }) {
-  const classes = sidebar ? 'section sidebar' : 'section';
+  const classes = sidebar
+    ? `section sidebar ${title.toLowerCase()}`
+    : `section ${title.toLowerCase()}`;
   return (
     <div className={classes}>
       <h2>

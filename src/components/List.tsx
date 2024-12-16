@@ -11,11 +11,9 @@ export default function List<T>({
   renderItem,
 }: ListProps<T>): React.ReactElement {
   return (
-    <ul className='list-disc list-outside pl-6'>
+    <ul>
       {items.map((item, index) => (
-        <li className='mb-1' key={index}>
-          {renderItem(item)}
-        </li>
+        <li key={index}>{renderItem(item)}</li>
       ))}
     </ul>
   );
