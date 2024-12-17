@@ -20,9 +20,27 @@
 }
 
 body {
+  font-family: 'Plus Jakarta Sans', 'Roboto', 'Helvetica Neue', sans-serif;
   margin: 0 auto;
   width: 8.5in;
   color: var(--text);
+}
+
+/* Name only */
+h1 {
+  font-size: 58px;
+  color: var(--text-primary);
+  font-weight: bold;
+}
+/* Section Titles */
+h2 {
+  color: var(--text-primary);
+  font-weight: bold;
+}
+/* skills subsections, strength name */
+h3 {
+  color: var(--text-secondary);
+  font-weight: bold;
 }
 
 .layout::before {
@@ -50,7 +68,6 @@ body {
   .section:not(.sidebar) {
     grid-column: main;
   }
-
   .sidebar {
     grid-column: sidebar;
   }
@@ -111,5 +128,26 @@ body {
   ul {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 200 800;
+    font-display: swap;
+    src: local('Plus Jakarta Sans'),
+      url(./assets/fonts/PlusJakartaSans-VariableFont_weight.ttf)
+        format('opentype');
+  }
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-style: italic;
+    font-weight: 200 800;
+    font-display: swap;
+    src: local('Plus Jakarta Sans'),
+      url(./assets/fonts/PlusJakartaSans-Italic-VariableFont_weight.ttf)
+        format('opentype');
   }
 }

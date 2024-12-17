@@ -5,7 +5,7 @@ export default function Header({ content }: { content: Header_t }) {
     <header className='header'>
       <div className='section'>
         <h1>{content.name}</h1>
-        <h2>{content.position}</h2>
+        <h3>{content.position}</h3>
       </div>
       <div className='section sidebar'>
         <p> {content.location}</p>
