@@ -12,6 +12,9 @@
   --icon-size: 30px;
 }
 
+/* * * * * * * * *
+ * GLOBAL STYLES *
+ * * * * * * * * */
 @media print {
   @page {
     size: letter portrait;
@@ -19,38 +22,58 @@
   }
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Plus Jakarta Sans', 'Roboto', 'Helvetica Neue', sans-serif;
+  font-family: 'Avenir Next', 'Roboto', 'Helvetica Neue', sans-serif;
   margin: 0 auto;
   width: 8.5in;
   color: var(--text);
+  font-size: 10pt;
+  line-height: 1.4;
 }
-
 /* Name only */
 h1 {
   font-size: 58px;
   color: var(--text-primary);
   font-weight: bold;
+  line-height: 1.2;
+  margin-top: 16px;
 }
 /* Section Titles */
 h2 {
+  font-size: 14pt;
+  line-height: 1.2;
   color: var(--text-primary);
-  font-weight: bold;
+  font-weight: 800;
 }
-/* skills subsections, strength name */
+/* skills subsections, experience subsections */
 h3 {
+  font-family: 'Covered By Your Grace';
+  font-size: 12pt;
   color: var(--text-secondary);
   font-weight: bold;
+  margin: 0;
+}
+p {
+  font-size: 10pt;
+  line-height: 1.4;
 }
 
+/* * * * * *
+ * LAYLOUT *
+ * * * * * */
 .layout::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  border-left: 1px solid var(--text-primary);
-  border-right: 1px solid var(--color-primary-300);
+  border-right: 1px solid var(--text-primary);
   height: 100%;
   width: var(--sidebar-width);
   background-color: var(--sidebar-color);
@@ -62,7 +85,6 @@ h3 {
   grid-template-columns: [sidebar] var(--sidebar-width) [main] calc(
       8.5in - var(--sidebar-width)
     );
-  /* grid-auto-rows: min-content; */
   grid-auto-flow: dense;
 
   .section:not(.sidebar) {
@@ -72,56 +94,40 @@ h3 {
     grid-column: sidebar;
   }
 }
-
 /* passes grid cell to children */
 .header,
 .timeline-event {
   display: contents;
 }
 
-.timeline {
-  display: grid;
-  grid-template-columns: [icon] var(--icon-size) [main] 1fr;
-  grid-auto-rows: min-content;
-
-  /* ensures no vertical line after the last icon */
-  :last-child .icon::before {
-    bottom: 0;
-  }
-  .timeline-event > :not(.icon) {
-    grid-column: main;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .icon {
-    position: relative;
-    grid-column: icon;
-    border-radius: 50%;
-    background-color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--icon-size);
-  }
-  .icon::before {
-    content: '';
-    position: absolute;
-    top: calc(var(--icon-size) / 2);
-    bottom: -80px;
-    left: calc((var(--icon-size) - 3px) / 2);
-    width: 3px;
-    background-color: var(--text-primary);
-    z-index: -1;
-  }
+/* * * * * * * * *
+ * HEADER STYLES *
+ * * * * * * * * */
+.header > .sidebar {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header > .sidebar > * {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
 }
 
-.experience ul {
-  list-style-type: disc;
-  list-style-position: outside;
-  padding-left: 1.5rem;
+.header > .sidebar > * > :first-child {
+  color: var(--text-primary);
+  margin-right: 8px;
 }
 
+.header > .sidebar > * > :last-child {
+  position: relative;
+  top: 2px;
+}
+
+/* * * * * * * * *
+ * SKILLS STYLES *
+ * * * * * * * * */
 .subsection {
   display: flex;
   flex-direction: column;
@@ -131,50 +137,114 @@ h3 {
   }
 }
 
-.header > .sidebar {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.header > .sidebar > * {
-  /* border: 1px dashed violet; */
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
-  /* gap: 8px;  */
+/* * * * * * * * * *
+ * TIMELINE STYLES *
+ * * * * * * * * * */
+.timeline {
+  display: grid;
+  grid-template-columns: [icon] var(--icon-size) [main] 1fr;
+
+  .deets {
+    grid-column: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 8px;
+    margin-bottom: 24px;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .stack > * {
+    padding-right: 4px;
+  }
+
+  .timeline-event {
+    margin-bottom: 8px;
+  }
+
+  /* ensures no vertical line after the last icon */
+  :last-child .icon::before {
+    bottom: 0;
+  }
+  .icon::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--icon-size) / 2);
+    bottom: -80px;
+    left: calc((var(--icon-size) - 3px) / 2);
+    width: 3px;
+    background-color: var(--text-secondary);
+    z-index: -1;
+  }
+  .icon {
+    position: relative;
+    grid-column: icon;
+    border-radius: 30%;
+    background-color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--icon-size);
+    width: var(--icon-size);
+  }
 }
 
-.header > .sidebar > * > :first-child {
-  /* line-height: 20px; */
-  color: var(--text-primary);
-  margin-right: 8px;
+/* * * * * * *
+ * EDUCATION *
+ * * * * * * */
+
+/* * * * * *
+ * SUMMARY *
+ * * * * * */
+
+/* * * * * * *
+ * EXPERIENCE *
+ * * * * * * */
+.experience ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1.5rem;
 }
 
-.header > .sidebar > * > :last-child {
-  /* display: inline-block; */
-  /* vertical-align: middle; */
-  position: relative;
-  top: 2px;
-}
+/* * * * * * * *
+ * MISC STYLES *
+ * * * * * * * */
 
+/* * * * * * * *
+ * FONT STYLES *
+ * * * * * * * */
 @layer base {
   @font-face {
-    font-family: 'Plus Jakarta Sans';
-    font-style: normal;
-    font-weight: 200 800;
-    font-display: swap;
-    src: local('Plus Jakarta Sans'),
-      url(./assets/fonts/PlusJakartaSans-VariableFont_weight.ttf)
-        format('opentype');
+    font-family: 'Avenir Next';
+    font-style: italic;
+    font-weight: 200 400;
+    font-display: block;
+    src: url(./assets/fonts/AvenirNextLTPro-It.otf) format('opentype');
   }
   @font-face {
-    font-family: 'Plus Jakarta Sans';
-    font-style: italic;
-    font-weight: 200 800;
+    font-family: 'Avenir Next';
+    font-style: normal;
+    font-weight: 200 400;
+    font-display: block;
+    src: url(./assets/fonts/AvenirNextLTPro-Regular.otf) format('opentype');
+  }
+  @font-face {
+    font-family: 'Avenir Next';
+    font-style: normal;
+    font-weight: 700 800;
+    font-display: block;
+    src: url(./assets/fonts/AvenirNextLTPro-Bold.otf) format('opentype');
+  }
+  @font-face {
+    font-family: 'Covered By Your Grace';
+    font-style: normal;
+    font-weight: 400;
     font-display: swap;
-    src: local('Plus Jakarta Sans'),
-      url(./assets/fonts/PlusJakartaSans-Italic-VariableFont_weight.ttf)
-        format('opentype');
+    src: url(./assets/fonts/CoveredByYourGrace-Regular.ttf) format('opentype');
   }
 }
