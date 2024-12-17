@@ -10,7 +10,7 @@ export default function Skills({ content }: { content: Skills_t }) {
         const name = capitalize(subsection);
         const skills = content[subsection as keyof Skills_t];
         return (
-          <div className='subsection'>
+          <div key='subsection' className='subsection'>
             <h3>{name}</h3>
             <ul>
               {skills.map(
