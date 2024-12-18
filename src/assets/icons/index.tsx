@@ -5,7 +5,8 @@ import { ReactComponent as Default } from './Default.svg';
 import { ReactComponent as Github } from './Github.svg';
 import { ReactComponent as Gmail } from './Gmail.svg';
 import { ReactComponent as GraphQL } from './GraphQL.svg';
-import { ReactComponent as HackerOne } from './HackerOne.svg';
+import { ReactComponent as Hackerone } from './Hackerone.svg';
+import { ReactComponent as HTML } from './HTML.svg';
 import { ReactComponent as JavaScript } from './JavaScript.svg';
 import { ReactComponent as Linkedin } from './Linkedin.svg';
 import { ReactComponent as Location } from './Location.svg';
@@ -35,7 +36,8 @@ export const iconMap: Record<string, React.FC<IconProps_t>> = {
   Github,
   Gmail,
   GraphQL,
-  HackerOne,
+  Hackerone,
+  HTML,
   JavaScript,
   Linkedin,
   Location,

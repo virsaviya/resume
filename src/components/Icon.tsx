@@ -17,6 +17,8 @@ export default function Icon({
     ...rest,
     width: size,
     height: size,
+    role: 'img',
+    'aria-label': capitalize(iconName),
   };
   return (
     <div className={className}>
