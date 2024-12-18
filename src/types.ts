@@ -1,3 +1,11 @@
+export interface Contact_t {
+  phone: string;
+  gmail: string;
+  location: string;
+  linkedin: string;
+  github?: string;
+}
+
 export interface Education_t {
   degree: string;
   institution: string;
@@ -9,11 +17,6 @@ export interface Education_t {
 export interface Header_t {
   name: string;
   position: string;
-  phone: string;
-  email: string;
-  location: string;
-  linkedin: string;
-  github?: string;
 }
 
 export interface History_t {

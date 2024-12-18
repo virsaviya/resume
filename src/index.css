@@ -95,33 +95,31 @@ p {
   }
 }
 /* passes grid cell to children */
-.header,
 .timeline-event,
 .pass-grid-down {
   display: contents;
 }
 
 /* * * * * * * * *
- * HEADER STYLES *
+ * CONTACT STYLES *
  * * * * * * * * */
-.header > .sidebar {
-  padding: 16px;
+.contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.header > .sidebar > * {
+.contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-.header > .sidebar > * > :first-child {
+.contact-item > *:first-child {
   color: var(--text-primary);
-  margin-right: 8px;
+  margin-right: 4px;
 }
 
-.header > .sidebar > * > :last-child {
+.contact-item > *:last-child {
   position: relative;
   top: 2px;
 }

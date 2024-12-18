@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Contact from 'components/Contact';
 import Education from 'components/Education';
 import Header from 'components/Header';
 import History from 'components/History';
@@ -7,6 +8,7 @@ import Section from 'components/Section';
 import Strengths from 'components/Strengths';
 import Skills from 'components/Skills';
 import {
+  contact,
   education,
   header,
   history,
@@ -18,7 +20,12 @@ import {
 function App() {
   return (
     <div className='layout'>
+      <div className='placeholder' />
       <Header content={header} />
+
+      <Section title='Contact' sidebar hidden>
+        <Contact content={contact} />
+      </Section>
 
       <Section title='Summary'>
         <p>{summary}</p>
