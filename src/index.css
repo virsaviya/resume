@@ -15,6 +15,7 @@
 /* * * * * * * * *
  * GLOBAL STYLES *
  * * * * * * * * */
+
 @media print {
   @page {
     size: letter portrait;
@@ -67,6 +68,7 @@ p {
 /* * * * * *
  * LAYLOUT *
  * * * * * */
+
 .layout::before {
   content: '';
   position: absolute;
@@ -98,7 +100,7 @@ p {
   padding: 16px;
 }
 /* passes grid cell to children */
-.timeline-event,
+.timeline .details,
 .pass-grid-down {
   display: contents;
 }
@@ -108,8 +110,9 @@ p {
 }
 
 /* * * * * * * * *
- * CONTACT STYLES *
+ * CONTACT STYLE *
  * * * * * * * * */
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -127,58 +130,67 @@ p {
 /* * * * * * * * * *
  * TIMELINE STYLES *
  * * * * * * * * * */
+
 .timeline {
+  display: flex;
+  flex-direction: column;
+}
+.timeline-event {
   display: grid;
-  grid-template-columns: [icon] var(--icon-size) [main] 1fr;
-
-  .deets {
-    grid-column: main;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-left: 8px;
-    margin-bottom: 24px;
-  }
-
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-  }
-
-  .stack > * {
-    padding-right: 4px;
-  }
-
-  .timeline-event {
-    margin-bottom: 8px;
-  }
-
-  /* ensures no vertical line after the last icon */
-  .timeline-event > :last-child .icon::before {
-    bottom: 0;
-  }
-  .timeline-event > .icon::before {
-    content: '';
-    position: absolute;
-    top: calc(var(--icon-size) / 2);
-    bottom: -80px;
-    left: calc((var(--icon-size) - 3px) / 2);
-    width: 3px;
-    background-color: var(--text-secondary);
-    z-index: -1;
-  }
-  .timeline-event > .icon {
-    position: relative;
-    grid-column: icon;
-    border-radius: 30%;
-    background-color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--icon-size);
-    width: var(--icon-size);
-  }
+  grid-template-columns:
+    [icon] calc(var(--icon-size) / 2)
+    [foo] calc(var(--icon-size) / 2)
+    [main] 1fr;
+  grid-template-rows: 2fr;
+  column-gap: 8px;
+  justify-items: center;
+  align-items: top;
+}
+.timeline .vertical-line {
+  grid-column: icon / main;
+  grid-row: 2 / 5;
+  width: 2px;
+  position: relative;
+  top: 10px;
+  background-color: var(--sidebar-color);
+}
+.timeline > :last-child > .vertical-line {
+  display: none;
+}
+/* event icon (ie sigma) */
+.timeline-event > .icon {
+  grid-column: icon / main;
+  grid-row: 1;
+  background-color: var(--text-secondary);
+  border-radius: 50%;
+  height: var(--icon-size);
+  width: var(--icon-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .timeline .details is passed down, so these are grid items */
+.timeline .details > * {
+  grid-column: main;
+  justify-self: start;
+  align-self: center;
+}
+.timeline > *:not(:nth-last-of-type(1)) {
+  margin-bottom: 16px;
+}
+.timeline .stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin-top: 4px;
+  color: var(--text-faded);
+}
+.details > :not(:first-child) {
+  color: var(--text-faded);
+}
+.details > :first-child {
+  text-transform: uppercase;
+  font-size: 1.2rem;
 }
 
 /* * * * * * * * *
@@ -224,9 +236,10 @@ p {
  * SUMMARY *
  * * * * * */
 
-/* * * * * * *
- * EXPERIENCE *
- * * * * * * */
+/* * * * * * * * * * *
+ * EXPERIENCE STYLES *
+ * * * * * * * * * * */
+
 .experience ul {
   list-style-type: disc;
   list-style-position: outside;
@@ -236,17 +249,19 @@ p {
 /* * * * * * * *
  * MISC STYLES *
  * * * * * * * */
-.icon {
-  display: flex;
-}
+
 .icon > p {
   margin-left: 4px;
+}
+p.nudge,
+.nudge p {
   position: relative;
   top: 2px;
 }
 /* * * * * * * *
  * FONT STYLES *
  * * * * * * * */
+
 @layer base {
   @font-face {
     font-family: 'Avenir Next';

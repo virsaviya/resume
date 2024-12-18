@@ -13,23 +13,41 @@ export default function History({ content }: { content: Array<History_t> }) {
           : parseDate(item.startDate);
 
         return (
-          <div className='timeline-event' key={item.id}>
+          <div className='timeline-event nudge' key={item.id}>
             <Icon iconName={item.id} size={20} color='white' />
-            <div className='deets'>
-              <h3>{item.organization}</h3>
-              <div>
-                <p>{item.position}</p>
-                <p>{date}</p>
-              </div>
+            <div className='vertical-line' />
+            <Details
+              title={item.organization}
+              subtitle={item.position}
+              date={date}>
               <div className='stack'>
                 {item.stack?.map((lib) => (
                   <Icon iconName={lib} />
                 ))}
               </div>
-            </div>
+            </Details>
           </div>
         );
       })}
     </div>
   );
 }
+
+const Details = ({
+  title,
+  subtitle,
+  date,
+  children,
+}: {
+  title: string;
+  subtitle: string;
+  date: string;
+  children?: React.ReactNode;
+}) => (
+  <div className='details'>
+    <p>{title}</p>
+    <p>{subtitle}</p>
+    <p>{date}</p>
+    {children}
+  </div>
+);

@@ -23,7 +23,7 @@ export default function Icon({
     'aria-label': capitalize(iconName),
   };
   return (
-    <div className={`icon ${className}`}>
+    <div className={`icon nudge ${className}`}>
       <IconToRender {...props} />
       {label && <p>{label}</p>}
     </div>
