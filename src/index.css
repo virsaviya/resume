@@ -54,7 +54,7 @@ h2 {
 /* skills subsections, experience subsections */
 h3 {
   font-family: 'Covered By Your Grace';
-  font-size: 16pt;
+  font-size: 14pt;
   color: var(--text-secondary);
   font-weight: bold;
   margin: 0;
@@ -73,10 +73,8 @@ p {
   top: 0;
   bottom: 0;
   left: 0;
-  border-right: 1px solid var(--text-primary);
   height: 100%;
   width: var(--sidebar-width);
-  background-color: var(--sidebar-color);
   z-index: -1;
 }
 .layout {
@@ -90,14 +88,23 @@ p {
   .section:not(.sidebar) {
     grid-column: main;
   }
+  .placeholder,
   .sidebar {
     grid-column: sidebar;
   }
+}
+
+.section:not(.header) > *:not(h2) {
+  padding: 16px;
 }
 /* passes grid cell to children */
 .timeline-event,
 .pass-grid-down {
   display: contents;
+}
+/* clears last margin in list */
+.contact-item:last-of-type {
+  margin: 0;
 }
 
 /* * * * * * * * *
@@ -113,15 +120,65 @@ p {
   align-items: center;
   margin-bottom: 8px;
 }
-
-.contact-item > *:first-child {
+.contact-item.icon > *:first-child {
   color: var(--text-primary);
-  margin-right: 4px;
 }
 
-.contact-item > *:last-child {
-  position: relative;
-  top: 2px;
+/* * * * * * * * * *
+ * TIMELINE STYLES *
+ * * * * * * * * * */
+.timeline {
+  display: grid;
+  grid-template-columns: [icon] var(--icon-size) [main] 1fr;
+
+  .deets {
+    grid-column: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 8px;
+    margin-bottom: 24px;
+  }
+
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .stack > * {
+    padding-right: 4px;
+  }
+
+  .timeline-event {
+    margin-bottom: 8px;
+  }
+
+  /* ensures no vertical line after the last icon */
+  .timeline-event > :last-child .icon::before {
+    bottom: 0;
+  }
+  .timeline-event > .icon::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--icon-size) / 2);
+    bottom: -80px;
+    left: calc((var(--icon-size) - 3px) / 2);
+    width: 3px;
+    background-color: var(--text-secondary);
+    z-index: -1;
+  }
+  .timeline-event > .icon {
+    position: relative;
+    grid-column: icon;
+    border-radius: 30%;
+    background-color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--icon-size);
+    width: var(--icon-size);
+  }
 }
 
 /* * * * * * * * *
@@ -159,63 +216,6 @@ p {
   margin-bottom: 12px;
 }
 
-/* * * * * * * * * *
- * TIMELINE STYLES *
- * * * * * * * * * */
-.timeline {
-  display: grid;
-  grid-template-columns: [icon] var(--icon-size) [main] 1fr;
-
-  .deets {
-    grid-column: main;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-left: 8px;
-    margin-bottom: 24px;
-  }
-
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-  }
-
-  .stack > * {
-    padding-right: 4px;
-  }
-
-  .timeline-event {
-    margin-bottom: 8px;
-  }
-
-  /* ensures no vertical line after the last icon */
-  :last-child .icon::before {
-    bottom: 0;
-  }
-  .icon::before {
-    content: '';
-    position: absolute;
-    top: calc(var(--icon-size) / 2);
-    bottom: -80px;
-    left: calc((var(--icon-size) - 3px) / 2);
-    width: 3px;
-    background-color: var(--text-secondary);
-    z-index: -1;
-  }
-  .icon {
-    position: relative;
-    grid-column: icon;
-    border-radius: 30%;
-    background-color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--icon-size);
-    width: var(--icon-size);
-  }
-}
-
 /* * * * * * *
  * EDUCATION *
  * * * * * * */
@@ -236,7 +236,14 @@ p {
 /* * * * * * * *
  * MISC STYLES *
  * * * * * * * */
-
+.icon {
+  display: flex;
+}
+.icon > p {
+  margin-left: 4px;
+  position: relative;
+  top: 2px;
+}
 /* * * * * * * *
  * FONT STYLES *
  * * * * * * * */

@@ -31,12 +31,12 @@ function App() {
         <p>{summary}</p>
       </Section>
 
-      <Section sidebar title='Skills'>
-        <Skills content={skills} />
-      </Section>
-
       <Section sidebar title='History'>
         <History content={history} />
+      </Section>
+
+      <Section sidebar title='Skills'>
+        <Skills content={skills} />
       </Section>
 
       <Section title='Experience'>

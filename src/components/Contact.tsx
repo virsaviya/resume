@@ -7,10 +7,12 @@ export default function Contact({ content }: { content: Contact_t }) {
     <div>
       {(Object.keys(content) as Array<keyof Contact_t>).map(
         (key: keyof Contact_t) => (
-          <div className='contact-item'>
-            <Icon iconName={capitalize(key)} size={20} />
-            <p>{content[key]}</p>
-          </div>
+          <Icon
+            className='contact-item'
+            iconName={capitalize(key)}
+            size={16}
+            label={content[key]}
+          />
         ),
       )}
     </div>

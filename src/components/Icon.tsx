@@ -6,11 +6,13 @@ import { capitalize } from 'utils';
 
 export default function Icon({
   iconName,
-  className,
+  className = '',
   size = 24,
+  label,
   ...rest
 }: IconProps_t & {
   iconName: IconName_t;
+  label?: string;
 }): React.ReactElement | null {
   const IconToRender = iconMap[capitalize(iconName)] || Default;
   const props = {
@@ -21,8 +23,9 @@ export default function Icon({
     'aria-label': capitalize(iconName),
   };
   return (
-    <div className={className}>
+    <div className={`icon ${className}`}>
       <IconToRender {...props} />
+      {label && <p>{label}</p>}
     </div>
   );
 }

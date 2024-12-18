@@ -14,7 +14,7 @@ export default function History({ content }: { content: Array<History_t> }) {
 
         return (
           <div className='timeline-event' key={item.id}>
-            <Icon className='icon' iconName={item.id} size={20} color='white' />
+            <Icon iconName={item.id} size={20} color='white' />
             <div className='deets'>
               <h3>{item.organization}</h3>
               <div>
