@@ -54,7 +54,7 @@ h2 {
 /* skills subsections, experience subsections */
 h3 {
   font-family: 'Covered By Your Grace';
-  font-size: 12pt;
+  font-size: 16pt;
   color: var(--text-secondary);
   font-weight: bold;
   margin: 0;
@@ -96,7 +96,8 @@ p {
 }
 /* passes grid cell to children */
 .header,
-.timeline-event {
+.timeline-event,
+.pass-grid-down {
   display: contents;
 }
 
@@ -128,13 +129,36 @@ p {
 /* * * * * * * * *
  * SKILLS STYLES *
  * * * * * * * * */
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'header header'
+    'methods design'
+    'libs libs';
+}
+.skills h2 {
+  grid-area: header;
+}
 .subsection {
   display: flex;
   flex-direction: column;
+  li {
+    margin: 0 4px 0 0;
+  }
+}
+/* grabs the lib subsection */
+.subsection:first-child {
+  grid-area: libs;
   ul {
     display: flex;
     flex-wrap: wrap;
   }
+}
+.subsection:not(:last-child) {
+  margin-bottom: 12px;
 }
 
 /* * * * * * * * * *

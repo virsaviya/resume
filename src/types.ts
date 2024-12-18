@@ -28,7 +28,6 @@ export interface History_t {
 
 export interface Skills_t {
   libraries: Array<string>;
-  frameworks: Array<string>;
   methodologies: Array<string>;
   design: Array<string>;
 }
