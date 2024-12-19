@@ -1,8 +1,9 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
   <title id="covid-act-now-icon-title">COVID Act Now</title>
-  <g clip-path="url(#clip0_1_7)">
-    <rect x="42" width="6" height="48" fill="currentColor" />
-    <rect x="-1" y="42" width="49" height="6" fill="currentColor" />
-    <circle cx="14" cy="14" r="11.5" stroke="currentColor" stroke-width="5" />
-  </g>
+  <path d="M22 2H19V22H22V2Z" fill="currentColor" />
+  <path d="M22 19H2V22H22V19Z" fill="currentColor" />
+  <path
+    d="M9 14C11.7614 14 14 11.7614 14 9C14 6.23858 11.7614 4 9 4C6.23858 4 4 6.23858 4 9C4 11.7614 6.23858 14 9 14Z"
+    stroke="currentColor"
+    stroke-width="2.5" />
 </svg>

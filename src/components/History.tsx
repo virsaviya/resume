@@ -46,8 +46,8 @@ const Details = ({
 }) => (
   <div className='details'>
     <p>{title}</p>
-    <p>{subtitle}</p>
     <p>{date}</p>
+    <p>{subtitle}</p>
     {children}
   </div>
 );
