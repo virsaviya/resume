@@ -8,6 +8,7 @@ export default function Contact({ content }: { content: Contact_t }) {
       {(Object.keys(content) as Array<keyof Contact_t>).map(
         (key: keyof Contact_t) => (
           <Icon
+            key={key}
             className='contact-item'
             iconName={capitalize(key)}
             size={12}

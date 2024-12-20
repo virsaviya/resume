@@ -20,7 +20,7 @@ export default function History({ content }: { content: Array<History_t> }) {
             <Details title={item.organization} subtitle={item.position}>
               <div className='stack'>
                 {item.stack?.map((lib) => (
-                  <Icon iconName={lib} />
+                  <Icon key={lib} iconName={lib} />
                 ))}
               </div>
             </Details>
