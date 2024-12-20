@@ -458,14 +458,17 @@ body {
 /* Name only */
 h1 {
   font-size: 60px;
-  /* font-weight: bold; */
   line-height: 1.2;
 }
 /* Section Titles */
 h2 {
-  font-size: 14pt;
+  text-align: center;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: var(--text-faded);
+  letter-spacing: 10px;
+  font-size: 10pt;
   line-height: 1.2;
-  font-weight: 800;
 }
 /* skills subsections, experience subsections */
 h3 {
@@ -499,17 +502,17 @@ p {
   grid-template-columns:
     [main] calc(8.5in - var(--sidebar-width))
     [sidebar] var(--sidebar-width);
-  /* grid-template-rows: min-content; */
-  grid-auto-flow: dense;
-
-  .section:not(.sidebar) {
-    grid-column: main;
-  }
-  .sidebar {
-    grid-column: sidebar;
-  }
+  grid-auto-rows: auto;
+  grid-auto-flow: row dense;
+  align-content: start;
 }
-
+.layout .section:not(.sidebar) {
+  grid-column: main;
+}
+.layout .sidebar {
+  grid-column: sidebar;
+}
+/* adds padding in all section bodies */
 .section:not(.header) > *:not(h2) {
   padding: var(--spacing-paragraphs);
 }
@@ -520,6 +523,13 @@ p {
 /* clears last margin in list */
 .contact-item:last-of-type {
   /* margin: 0; */
+}
+.summary {
+  margin-top: var(--spacing-paragraphs);
+}
+.history,
+.experience {
+  grid-row: span 3;
 }
 
 /* * * * * * * * *
