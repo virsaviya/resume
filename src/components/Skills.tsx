@@ -5,7 +5,7 @@ import { Skills_t } from 'types';
 
 export default function Skills({ content }: { content: Skills_t }) {
   return (
-    <div className='pass-grid-down'>
+    <div>
       <div className='subsection'>
         <h3>Frameworks & Libraries</h3>
         <ul>

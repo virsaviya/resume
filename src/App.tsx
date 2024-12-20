@@ -11,10 +11,9 @@ import { contact, header, history, skills, strengths, summary } from 'content';
 function App() {
   return (
     <div className='layout'>
-      <div className='placeholder' />
       <Header content={header} />
 
-      <Section title='Contact' sidebar hidden>
+      <Section sidebar title='Contact' hidden>
         <Contact content={contact} />
       </Section>
 
@@ -22,12 +21,12 @@ function App() {
         <p>{summary}</p>
       </Section>
 
-      <Section sidebar title='History'>
-        <History content={history} />
-      </Section>
-
       <Section sidebar title='Skills'>
         <Skills content={skills} />
+      </Section>
+
+      <Section sidebar title='History'>
+        <History content={history} />
       </Section>
 
       <Section title='Experience'>

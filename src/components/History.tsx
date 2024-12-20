@@ -45,7 +45,7 @@ const Details = ({
   children?: React.ReactNode;
 }) => (
   <div className='details'>
-    <p>{title}</p>
+    <h3>{title}</h3>
     <p>{date}</p>
     <p>{subtitle}</p>
     {children}

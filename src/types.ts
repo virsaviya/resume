@@ -1,7 +1,7 @@
 export interface Contact_t {
-  phone: string;
+  // location: string;
   gmail: string;
-  location: string;
+  phone: string;
   linkedin: string;
   github?: string;
 }
@@ -15,7 +15,8 @@ export interface Education_t {
 }
 
 export interface Header_t {
-  name: string;
+  firstName: string;
+  lastName: string;
   position: string;
 }
 

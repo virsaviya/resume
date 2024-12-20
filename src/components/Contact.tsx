@@ -10,7 +10,7 @@ export default function Contact({ content }: { content: Contact_t }) {
           <Icon
             className='contact-item'
             iconName={capitalize(key)}
-            size={16}
+            size={12}
             label={content[key]}
           />
         ),
