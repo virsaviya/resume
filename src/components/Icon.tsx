@@ -24,8 +24,8 @@ export default function Icon({
   };
   return (
     <div className={`icon nudge ${className}`}>
-      <IconToRender {...props} />
       {label && <p>{label}</p>}
+      <IconToRender {...props} />
     </div>
   );
 }

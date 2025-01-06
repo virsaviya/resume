@@ -3,7 +3,7 @@ export interface Contact_t {
   gmail: string;
   phone: string;
   linkedin: string;
-  github?: string;
+  // github: string;
 }
 
 export interface Education_t {

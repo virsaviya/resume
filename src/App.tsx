@@ -11,11 +11,7 @@ import { contact, header, history, skills, strengths, summary } from 'content';
 function App() {
   return (
     <div className='layout'>
-      <Header content={header} />
-
-      <Section sidebar title='Contact' hidden>
-        <Contact content={contact} />
-      </Section>
+      <Header content={header} contact={contact} />
 
       <Section title='Summary' hidden>
         <p>{summary}</p>
