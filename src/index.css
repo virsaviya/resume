@@ -425,6 +425,7 @@
   --bg-color: var(--color-iris-2);
 
   --page-width: 8.5in;
+  --page-height: 11in;
   --sidebar-width: 3in;
   --sidebar-color: #e7e5ff;
   --icon-size: 30px;
@@ -505,6 +506,9 @@ p {
   z-index: 1;
 }
 .layout {
+  padding: var(--spacing-layout);
+  height: var(--page-height);
+
   position: relative;
   display: grid;
   grid-template-columns:
@@ -518,7 +522,6 @@ p {
   grid-auto-rows: auto;
   grid-auto-flow: row dense;
   align-content: start;
-  padding: var(--spacing-layout);
 }
 /* passes grid cell to children */
 .timeline .details {
@@ -579,15 +582,15 @@ h2 {
 .header .last {
   letter-spacing: 4px;
 }
-.contact {
+.header .contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.contact-item {
+.header .contact-item {
   justify-content: end;
 }
-.contact p {
+.header .contact p {
   font-size: 8pt;
 }
 
@@ -707,6 +710,21 @@ h2 {
 .icon {
   display: flex;
   align-items: center;
+}
+
+/* * * * * * * * * * * *
+ * COVER LETTER STYLES *
+ * * * * * * * * * * * */
+
+.cover-letter {
+  padding: var(--spacing-paragraphs);
+}
+.cover-letter svg {
+  width: 150px;
+}
+.cover-letter svg,
+.cover-letter p {
+  margin-bottom: var(--spacing-paragraphs);
 }
 
 /* * * * * * * *
