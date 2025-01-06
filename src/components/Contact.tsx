@@ -13,6 +13,7 @@ export default function Contact({ content }: { content: Contact_t }) {
             iconName={capitalize(key)}
             size={12}
             label={content[key]}
+            labelLeft={true}
           />
         ),
       )}

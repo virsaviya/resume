@@ -545,11 +545,8 @@ p {
 h2 {
   margin-bottom: var(--spacing-paragraphs);
 }
-.sidebar h2 {
-  margin-top: var(--spacing-layout);
-}
 .history {
-  /* padding-top: var(--spacing-layout); */
+  padding-top: var(--spacing-paragraphs);
 }
 /* * * * * * * * *
  * HEADER STYLES *
@@ -588,9 +585,7 @@ h2 {
   justify-content: center;
 }
 .contact-item {
-  display: flex;
   justify-content: end;
-  align-items: center;
 }
 .contact p {
   font-size: 8pt;
@@ -669,15 +664,14 @@ h2 {
 .skills > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
   grid-template-areas:
-    'methods design'
-    'libs libs';
+    'methods libs'
+    'design libs';
 }
 .skills h2 {
   grid-area: header;
 }
-.skills .subsection.libs {
+.skills .subsection:last-of-type {
   grid-area: libs;
 }
 .subsection {
@@ -686,14 +680,6 @@ h2 {
 }
 .subsection li {
   margin: 0 var(--spacing-words) 0 0;
-}
-.subsection.libs h3 {
-  width: calc(100% - var(--spacing-layout)); /* accounts for left gutter */
-  text-align: center;
-}
-.subsection.libs ul {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 /* * * * * *
@@ -711,12 +697,22 @@ h2 {
 }
 
 /* * * * * * * *
+ * ICON STYLES *
+ * * * * * * * */
+
+.icon > p,
+.skills .icon > svg {
+  margin-right: var(--spacing-words);
+}
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+/* * * * * * * *
  * MISC STYLES *
  * * * * * * * */
 
-.icon > p {
-  margin-right: var(--spacing-words);
-}
 p.nudge,
 .nudge p {
   position: relative;

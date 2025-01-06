@@ -9,10 +9,12 @@ export default function Icon({
   className = '',
   size = 24,
   label,
+  labelLeft = false,
   ...rest
 }: IconProps_t & {
   iconName: IconName_t;
   label?: string;
+  labelLeft?: boolean;
 }): React.ReactElement | null {
   const IconToRender = iconMap[capitalize(iconName)] || Default;
   const props = {
@@ -24,8 +26,9 @@ export default function Icon({
   };
   return (
     <div className={`icon nudge ${className}`}>
-      {label && <p>{label}</p>}
+      {label && labelLeft && <p>{label}</p>}
       <IconToRender {...props} />
+      {label && !labelLeft && <p>{label}</p>}
     </div>
   );
 }

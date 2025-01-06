@@ -25,6 +25,7 @@ export default function Header({
               iconName={capitalize(key)}
               size={12}
               label={contact[key]}
+              labelLeft
             />
           ),
         )}
