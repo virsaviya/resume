@@ -3,6 +3,7 @@
 }
 .cover-letter svg {
   width: 150px;
+  color: var(--color-primary);
 }
 .cover-letter svg,
 .cover-letter p {

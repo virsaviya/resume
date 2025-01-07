@@ -5,7 +5,7 @@ import './CoverLetter.css';
 
 export default function CoverLetter({ content }: { content: Array<string> }) {
   return (
-    <div className='cover-letter'>
+    <div>
       {content.map((p, i) => (
         <p key={`cover-letter-${i}`}>{p}</p>
       ))}

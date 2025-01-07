@@ -18,40 +18,38 @@ import {
 import './App.css';
 
 function App({ type }: { type: 'cover-letter' | 'resume' }) {
-  if (type === 'cover-letter')
-    return (
-      <div className='layout'>
-        <Header content={header} contact={contact} />
+  const isResume = type === 'resume';
+  return (
+    <div className='layout'>
+      <Header content={header} contact={contact} />
 
-        <Section title='Cover Letter' hidden>
-          <CoverLetter content={coverLetter} />
-        </Section>
-      </div>
-    );
-  else
-    return (
-      <div className='layout'>
-        <Header content={header} contact={contact} />
-
-        <Section title='Summary' hidden>
+      {isResume && (
+        <Section title='Summary'>
           <p>{summary}</p>
         </Section>
+      )}
 
-        <Section sidebar title='History'>
-          <History content={history} />
-        </Section>
+      <Section sidebar title='History'>
+        <History content={history} />
+      </Section>
 
-        <Section sidebar title='Skills'>
-          <Skills content={skills} />
-        </Section>
+      <Section sidebar title='Skills'>
+        <Skills content={skills} />
+      </Section>
 
+      {isResume ? (
         <Section title='Experience'>
           {strengths.map((strength) => (
             <Strengths key={strength.id} strength={strength} />
           ))}
         </Section>
-      </div>
-    );
+      ) : (
+        <Section title='Cover-Letter' hidden>
+          <CoverLetter content={coverLetter} />
+        </Section>
+      )}
+    </div>
+  );
 }
 
 export default App;

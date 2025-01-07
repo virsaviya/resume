@@ -5,16 +5,30 @@
     'methods libs'
     'design libs';
 }
-.skills h2 {
-  grid-area: header;
-}
 .skills .subsection:last-of-type {
   grid-area: libs;
+}
+.skills h2 {
+  grid-area: header;
+  margin-top: var(--spacing-words);
 }
 .subsection {
   display: flex;
   flex-direction: column;
 }
 .subsection li {
-  margin: 0 var(--spacing-words) 0 0;
+  margin: 0 var(--spacing-words) 0;
+  /* margin: 0 var(--spacing-words) 0 var(--spacing-paragraphs); */
+}
+.subsection h3 {
+  margin-bottom: calc(var(--spacing-paragraphs) / 2);
+}
+
+.libs li {
+  padding-bottom: var(--spacing-words);
+}
+
+.libs svg {
+  height: 20px;
+  width: 20px;
 }

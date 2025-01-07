@@ -21,6 +21,7 @@ export interface Header_t {
 }
 
 export interface History_t {
+  type: 'volunteer' | 'employment' | 'education';
   id: string;
   organization: string;
   position: string;

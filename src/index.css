@@ -418,17 +418,18 @@
 :root {
   --text: var(--color-slate-12);
   --text-faded: var(--color-slate-11);
+  --spacing-page-width: 8.5in;
+  --spacing-page-height: 11in;
   --spacing-layout: 24px; /* same as 0.25in */
   --spacing-paragraphs: 12px;
   --spacing-words: 4px;
-  --color-primary: var(--color-indigo-10);
-  --color-secondary: var(var(--color-jade-10));
-  --bg-color: var(--color-iris-2);
+  --color-primary: var(--color-iris-11);
+  --color-primary-faded: var(--color-iris-6);
+  --color-secondary: var(--color-purple-11);
+  --color-bg: var(--color-indigo-2);
 
-  --page-width: 8.5in;
-  --page-height: 11in;
+  --color-sidebar: var(--color-indigo-3);
   --sidebar-width: 3in;
-  --sidebar-color: #e7e5ff;
   --icon-size: 30px;
 }
 
@@ -459,12 +460,12 @@ body {
   color: var(--text);
   font-size: 10pt;
   line-height: 1.4;
-  background-color: var(--bg-color);
+  background-color: var(--color-bg);
 }
 
 /* Header only */
 h1 {
-  font-size: 72px; /* @TODO bring back to 58px*/
+  font-size: 72px;
   line-height: 1.2;
 }
 
@@ -473,7 +474,7 @@ h2 {
   text-align: center;
   font-weight: 200;
   text-transform: uppercase;
-  color: var(--text-faded);
+  color: var(--color-primary);
   letter-spacing: 10px;
   font-size: 10pt;
   line-height: 1.2;
@@ -485,6 +486,10 @@ h3 {
   font-size: 14pt;
   font-weight: bold;
   letter-spacing: 0.03rem;
+  color: var(--color-secondary);
+}
+.sidebar h3 {
+  color: var(--color-primary);
 }
 p {
   font-size: 10pt;

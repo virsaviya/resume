@@ -1,8 +1,10 @@
 .header {
   display: flex;
   justify-content: space-between;
+  margin-right: var(--spacing-layout);
 }
 .header h3 {
+  color: var(--color-secondary);
   position: absolute;
   /* LEFT */
   top: 16px;
@@ -21,9 +23,11 @@
 .header .first {
   font-weight: bold;
   letter-spacing: 2px;
+  color: var(--color-primary);
 }
 .header .last {
   letter-spacing: 4px;
+  color: var(--color-secondary);
 }
 .header .contact {
   display: flex;
@@ -35,4 +39,7 @@
 }
 .header .contact p {
   font-size: 8pt;
+}
+.header svg {
+  color: var(--color-primary);
 }
