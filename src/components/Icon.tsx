@@ -22,7 +22,7 @@ export default function Icon({
     width: size,
     height: size,
     role: 'img',
-    'aria-label': capitalize(iconName),
+    'aria-label': `${capitalize(iconName)}-icon`,
   };
   return (
     <div className={`icon nudge ${className}`}>

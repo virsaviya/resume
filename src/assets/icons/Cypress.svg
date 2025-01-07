@@ -1,0 +1,39 @@
+<svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  color="currentColor"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <title id="cypress-icon-title">Cypress</title>
+  <defs>
+    <linearGradient id="left-half" gradientTransform="rotate(90)">
+      <stop offset="0%" stop-opacity=".5" stop-color="currentColor" />
+      <stop offset="80%" stop-opacity=".8" stop-color="currentColor" />
+      <stop offset="100%" stop-opacity="1" stop-color="currentColor" />
+    </linearGradient>
+    <linearGradient id="right-half" gradientTransform="rotate(90)">
+      <stop offset="0%" stop-opacity=".5" stop-color="currentColor" />
+      <stop offset="80%" stop-opacity=".2" stop-color="currentColor" />
+      <stop offset="97%" stop-opacity="0" stop-color="currentColor" />
+      <stop offset="100%" stop-opacity="0" stop-color="currentColor" />
+    </linearGradient>
+  </defs>
+  <path
+    stroke-width="1.7"
+    stroke="url(#left-half)"
+    d="M 12 23 A 11 11 0 0 1 12 1" />
+  <path
+    stroke-width="1.7"
+    stroke="url(#right-half)"
+    d="M 12 23 A 10 10 0 0 0 12 1" />
+  <path
+    d="M18.622 8.0366L16.3057 13.9166L13.9716 8.0366H12.0619L15.3356 16.0621L12.9511 21.856L14.6208 22.19L20.4256 8.0366H18.622Z"
+    fill="currentColor" />
+  <path
+    d="M8.43448 9.5243C9.40449 9.5243 10.1926 10.043 10.5968 10.9437L10.6271 11.0145L12.2539 10.4604L12.221 10.3769C11.592 8.83864 10.1396 7.8848 8.43448 7.8848C7.23461 7.8848 6.25955 8.26937 5.45374 9.06129C4.65299 9.84815 4.24882 10.8374 4.24882 12.0013C4.24882 13.1575 4.65551 14.1417 5.45374 14.9261C6.25955 15.718 7.23461 16.1026 8.43448 16.1026C10.1396 16.1026 11.5895 15.1462 12.221 13.6104L12.2539 13.5269L10.6246 12.9728L10.5968 13.0462C10.233 13.9343 9.42469 14.4631 8.43448 14.4631C7.76003 14.4631 7.18914 14.2278 6.7395 13.7622C6.28229 13.2916 6.05242 12.697 6.05242 12.0013C6.05242 11.3004 6.27724 10.7185 6.7395 10.2251C7.19167 9.7596 7.76003 9.5243 8.43448 9.5243Z"
+    fill="currentColor" />
+  <path
+    d="M11.05 23.8196C11.3785 23.8473 11.7099 23.8615 12.0437 23.8617H12.0462C12.2129 23.8617 12.3796 23.8592 12.5464 23.8516C13.4027 23.8161 14.1681 23.2772 14.4965 22.4803L14.9714 21.324L13.3017 20.99L12.9505 21.8427C12.8697 22.0375 12.7535 22.1716 12.5464 22.1792H12.457C12.3155 22.1842 12.1878 22.1515 12.0437 22.1515C11.7087 22.1515 11.3788 22.1406 11.05 22.1084V23.8196Z"
+    fill="currentColor" />
+</svg>
