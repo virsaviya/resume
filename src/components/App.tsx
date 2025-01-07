@@ -15,6 +15,7 @@ import {
   strengths,
   summary,
 } from 'content';
+import './App.css';
 
 function App({ type }: { type: 'cover-letter' | 'resume' }) {
   if (type === 'cover-letter')

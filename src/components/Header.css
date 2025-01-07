@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header h3 {
+  position: absolute;
+  /* LEFT */
+  top: 16px;
+  left: 95px;
+  font-size: 18pt;
+
+  /* TOP */
+  /* top: 16px; */
+  /* left: 336px; */
+  /* font-size: 14pt; */
+  /* BOTTOM */
+  /* top: 66px; */
+  /* left: 306px; */
+  /* font-size: 20pt; */
+}
+.header .first {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.header .last {
+  letter-spacing: 4px;
+}
+.header .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header .contact-item {
+  justify-content: end;
+}
+.header .contact p {
+  font-size: 8pt;
+}

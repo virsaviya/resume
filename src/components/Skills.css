@@ -1,0 +1,20 @@
+.skills > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'methods libs'
+    'design libs';
+}
+.skills h2 {
+  grid-area: header;
+}
+.skills .subsection:last-of-type {
+  grid-area: libs;
+}
+.subsection {
+  display: flex;
+  flex-direction: column;
+}
+.subsection li {
+  margin: 0 var(--spacing-words) 0 0;
+}

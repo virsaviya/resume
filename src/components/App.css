@@ -1,0 +1,80 @@
+/* * * *  *
+ * LAYOUT *
+ * * * *  */
+
+.layout::before {
+  content: '';
+  background-color: var(--sidebar-color);
+  border-radius: 0 var(--spacing-paragraphs) var(--spacing-paragraphs) 0;
+  width: calc(var(--sidebar-width) + var(--spacing-layout));
+
+  position: absolute;
+  top: 110px;
+  bottom: var(--spacing-layout);
+  left: 0;
+}
+.layout * {
+  z-index: 1;
+}
+.layout {
+  padding: var(--spacing-layout);
+  height: var(--page-height);
+
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    [sidebar] var(--sidebar-width)
+    [main] calc(
+      var(--page-width) - var(--sidebar-width) - var(--spacing-layout) * 2
+    );
+  grid-template-areas:
+    'header header'
+    'sidebar main';
+  grid-auto-rows: auto;
+  grid-auto-flow: row dense;
+  align-content: start;
+}
+/* passes grid cell to children */
+.timeline .details {
+  display: contents;
+}
+.header {
+  grid-area: header;
+}
+.layout .section:not(.sidebar):not(.header) {
+  grid-column: main;
+  margin-left: var(--spacing-layout);
+}
+.layout .sidebar {
+  grid-column: sidebar;
+}
+.history,
+.experience {
+  grid-row: span 3;
+}
+.timeline > *:not(:last-of-type),
+.experience > div:not(:last-of-type),
+.skills .subsection,
+.section:not(.header):not(.contact),
+h2 {
+  margin-bottom: var(--spacing-paragraphs);
+}
+.history {
+  padding-top: var(--spacing-paragraphs);
+}
+
+/* * *  *
+ * MISC *
+ * * *  */
+
+p.nudge,
+.nudge p {
+  position: relative;
+  top: 2px;
+}
+
+.experience ul {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: var(--spacing-paragraphs);
+}

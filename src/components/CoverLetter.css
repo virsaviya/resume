@@ -1,0 +1,10 @@
+.cover-letter {
+  padding: var(--spacing-paragraphs);
+}
+.cover-letter svg {
+  width: 150px;
+}
+.cover-letter svg,
+.cover-letter p {
+  margin-bottom: var(--spacing-paragraphs);
+}

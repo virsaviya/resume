@@ -2,6 +2,7 @@ import React from 'react';
 
 import Icon from 'components/Icon';
 import { Skills_t } from 'types';
+import './Skills.css';
 
 export default function Skills({ content }: { content: Skills_t }) {
   return (

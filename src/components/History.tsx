@@ -3,6 +3,7 @@ import React from 'react';
 import Icon from 'components/Icon';
 import { History_t } from 'types';
 import { parseDate } from 'utils';
+import './History.css';
 
 export default function History({ content }: { content: Array<History_t> }) {
   return (

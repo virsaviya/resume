@@ -1,6 +1,7 @@
 import Icon from 'components/Icon';
 import { Contact_t, Header_t } from 'types';
 import { capitalize } from 'utils';
+import './Header.css';
 
 export default function Header({
   content,

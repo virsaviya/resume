@@ -408,6 +408,7 @@
 }
 
 /* 
+ * https://www.radix-ui.com/colors
  * backgrounds: 1, 2
  * interactive: 3, 4, 5
  * borders and seperators: 6, 7, 8
@@ -460,11 +461,13 @@ body {
   line-height: 1.4;
   background-color: var(--bg-color);
 }
-/* Name only */
+
+/* Header only */
 h1 {
   font-size: 72px; /* @TODO bring back to 58px*/
   line-height: 1.2;
 }
+
 /* Section Titles */
 h2 {
   text-align: center;
@@ -475,6 +478,7 @@ h2 {
   font-size: 10pt;
   line-height: 1.2;
 }
+
 /* skills subsections, experience subsections */
 h3 {
   font-family: 'Covered By Your Grace';
@@ -486,260 +490,6 @@ p {
   font-size: 10pt;
   line-height: 1.4;
 }
-
-/* * * * * *
- * LAYLOUT *
- * * * * * */
-
-.layout::before {
-  content: '';
-  background-color: var(--sidebar-color);
-  border-radius: 0 var(--spacing-paragraphs) var(--spacing-paragraphs) 0;
-  width: calc(var(--sidebar-width) + var(--spacing-layout));
-
-  position: absolute;
-  top: 110px;
-  bottom: var(--spacing-layout);
-  left: 0;
-}
-.layout * {
-  z-index: 1;
-}
-.layout {
-  padding: var(--spacing-layout);
-  height: var(--page-height);
-
-  position: relative;
-  display: grid;
-  grid-template-columns:
-    [sidebar] var(--sidebar-width)
-    [main] calc(
-      var(--page-width) - var(--sidebar-width) - var(--spacing-layout) * 2
-    );
-  grid-template-areas:
-    'header header'
-    'sidebar main';
-  grid-auto-rows: auto;
-  grid-auto-flow: row dense;
-  align-content: start;
-}
-/* passes grid cell to children */
-.timeline .details {
-  display: contents;
-}
-.header {
-  grid-area: header;
-}
-.layout .section:not(.sidebar):not(.header) {
-  grid-column: main;
-  margin-left: var(--spacing-layout);
-}
-.layout .sidebar {
-  grid-column: sidebar;
-}
-.history,
-.experience {
-  grid-row: span 3;
-}
-.timeline > *:not(:last-of-type),
-.experience > div:not(:last-of-type),
-.skills .subsection,
-.section:not(.header):not(.contact),
-h2 {
-  margin-bottom: var(--spacing-paragraphs);
-}
-.history {
-  padding-top: var(--spacing-paragraphs);
-}
-/* * * * * * * * *
- * HEADER STYLES *
- * * * * * * * * */
-
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-.header h3 {
-  position: absolute;
-  /* LEFT */
-  top: 16px;
-  left: 95px;
-  font-size: 18pt;
-
-  /* TOP */
-  /* top: 16px; */
-  /* left: 336px; */
-  /* font-size: 14pt; */
-  /* BOTTOM */
-  /* top: 66px; */
-  /* left: 306px; */
-  /* font-size: 20pt; */
-}
-.header .first {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-.header .last {
-  letter-spacing: 4px;
-}
-.header .contact {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.header .contact-item {
-  justify-content: end;
-}
-.header .contact p {
-  font-size: 8pt;
-}
-
-/* * * * * * * * * *
- * TIMELINE STYLES *
- * * * * * * * * * */
-
-.timeline {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-.timeline-event {
-  display: grid;
-  grid-template-columns:
-    [date] 60px
-    [icon] calc(var(--icon-size) / 2)
-    [line] calc(var(--icon-size) / 2)
-    [main] 2fr;
-  grid-template-rows: 2fr;
-  column-gap: var(--spacing-words);
-  justify-items: center;
-  align-items: top;
-}
-.timeline .vertical-line {
-  grid-column: icon / main;
-  grid-row: 2 / 5;
-  width: 2px;
-  position: relative;
-  top: 6px;
-  background-color: var(--text-faded);
-}
-.timeline > :last-child > .vertical-line {
-  display: none;
-}
-.timeline .date {
-  color: var(--text-faded);
-  grid-column: date;
-  font-size: 8pt;
-  justify-self: end;
-  align-self: center;
-}
-/* event icon (ie sigma) */
-.timeline-event > .icon {
-  grid-column: icon / main;
-  grid-row: 1;
-  background-color: var(--text);
-  border-radius: 50%;
-  height: var(--icon-size);
-  width: var(--icon-size);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* .timeline .details is passed down, so these are grid items */
-.timeline .details > * {
-  grid-column: main;
-  justify-self: start;
-  align-self: center;
-}
-.timeline .stack {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  color: var(--text-faded);
-}
-.details > :not(:first-child) {
-  color: var(--text-faded);
-}
-
-/* * * * * * * * *
- * SKILLS STYLES *
- * * * * * * * * */
-.skills > div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    'methods libs'
-    'design libs';
-}
-.skills h2 {
-  grid-area: header;
-}
-.skills .subsection:last-of-type {
-  grid-area: libs;
-}
-.subsection {
-  display: flex;
-  flex-direction: column;
-}
-.subsection li {
-  margin: 0 var(--spacing-words) 0 0;
-}
-
-/* * * * * *
- * SUMMARY *
- * * * * * */
-
-/* * * * * * * * * * *
- * EXPERIENCE STYLES *
- * * * * * * * * * * */
-
-.experience ul {
-  list-style-type: disc;
-  list-style-position: outside;
-  padding-left: var(--spacing-paragraphs);
-}
-
-/* * * * * * * *
- * ICON STYLES *
- * * * * * * * */
-
-.icon > p,
-.skills .icon > svg {
-  margin-right: var(--spacing-words);
-}
-.icon {
-  display: flex;
-  align-items: center;
-}
-
-/* * * * * * * * * * * *
- * COVER LETTER STYLES *
- * * * * * * * * * * * */
-
-.cover-letter {
-  padding: var(--spacing-paragraphs);
-}
-.cover-letter svg {
-  width: 150px;
-}
-.cover-letter svg,
-.cover-letter p {
-  margin-bottom: var(--spacing-paragraphs);
-}
-
-/* * * * * * * *
- * MISC STYLES *
- * * * * * * * */
-
-p.nudge,
-.nudge p {
-  position: relative;
-  top: 2px;
-}
-
-/* * * * * * * *
- * FONT STYLES *
- * * * * * * * */
 
 @layer base {
   @font-face {

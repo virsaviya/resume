@@ -1,0 +1,62 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.timeline-event {
+  display: grid;
+  grid-template-columns:
+    [date] 60px
+    [icon] calc(var(--icon-size) / 2)
+    [line] calc(var(--icon-size) / 2)
+    [main] 2fr;
+  grid-template-rows: 2fr;
+  column-gap: var(--spacing-words);
+  justify-items: center;
+  align-items: top;
+}
+.timeline .vertical-line {
+  grid-column: icon / main;
+  grid-row: 2 / 5;
+  width: 2px;
+  position: relative;
+  top: 6px;
+  background-color: var(--text-faded);
+}
+.timeline > :last-child > .vertical-line {
+  display: none;
+}
+.timeline .date {
+  color: var(--text-faded);
+  grid-column: date;
+  font-size: 8pt;
+  justify-self: end;
+  align-self: center;
+}
+/* event icon (ie sigma) */
+.timeline-event > .icon {
+  grid-column: icon / main;
+  grid-row: 1;
+  background-color: var(--text);
+  border-radius: 50%;
+  height: var(--icon-size);
+  width: var(--icon-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .timeline .details is passed down, so these are grid items */
+.timeline .details > * {
+  grid-column: main;
+  justify-self: start;
+  align-self: center;
+}
+.timeline .stack {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  color: var(--text-faded);
+}
+.details > :not(:first-child) {
+  color: var(--text-faded);
+}
