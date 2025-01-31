@@ -1,8 +1,0 @@
-.icon > p,
-.skills .icon > svg {
-  margin-right: var(--spacing-words);
-}
-.icon {
-  display: flex;
-  align-items: center;
-}

@@ -3,7 +3,6 @@ import React from 'react';
 import { ReactComponent as Default } from 'assets/icons/Default.svg';
 import { IconProps_t, IconName_t, iconMap } from 'assets/icons';
 import { capitalize } from 'utils';
-import './Icon.css';
 
 export default function Icon({
   iconName,
@@ -24,6 +23,12 @@ export default function Icon({
     height: size,
     role: 'img',
     'aria-label': `${capitalize(iconName)}-icon`,
+    style:
+      label && labelLeft
+        ? { marginLeft: 'var(--spacing-words)' }
+        : label && !labelLeft
+        ? { marginRight: 'var(--spacing-words)' }
+        : {},
   };
   return (
     <div className={`icon nudge ${className}`}>

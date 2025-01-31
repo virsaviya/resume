@@ -526,3 +526,8 @@ p {
     src: url(./assets/fonts/CoveredByYourGrace-Regular.ttf) format('opentype');
   }
 }
+
+.icon {
+  display: flex;
+  align-items: center;
+}

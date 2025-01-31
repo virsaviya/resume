@@ -1,5 +1,6 @@
 import { ReactComponent as Accenture } from './Accenture.svg';
 import { ReactComponent as ActNow } from './ActNow.svg';
+import { ReactComponent as Calendar } from './Calendar.svg';
 import { ReactComponent as CodingHouse } from './CodingHouse.svg';
 import { ReactComponent as Cypress } from './Cypress.svg';
 import { ReactComponent as CSS } from './CSS.svg';
@@ -38,6 +39,7 @@ export type IconName_t = keyof typeof iconMap;
 export const iconMap: Record<string, React.FC<IconProps_t>> = {
   Accenture,
   ActNow,
+  Calendar,
   CodingHouse,
   Cypress,
   CSS,
