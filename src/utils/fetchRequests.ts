@@ -1,7 +1,7 @@
-import { History_t } from 'types';
+import { Experience_t } from 'types';
 
 const DELIMITER = ' | ';
-const EXPECTED_HEADERS: Array<keyof History_t> = [
+const EXPECTED_HEADERS: Array<keyof Experience_t> = [
   'type',
   'id',
   'display',
@@ -30,7 +30,7 @@ export const fetchData = async (): Promise<FetchResponse_t> => {
   }
 };
 
-export const parseSheetData = (data: FetchResponse_t): Array<History_t> => {
+export const parseSheetData = (data: FetchResponse_t): Array<Experience_t> => {
   const [fetchedHeaders, ...rows] = data.values;
   const map = makeHeaderToIdxMap(fetchedHeaders);
 
@@ -53,12 +53,12 @@ export const parseSheetData = (data: FetchResponse_t): Array<History_t> => {
         stack: stack?.length > 0 ? stack.split(',') : undefined,
         description:
           description?.length > 0 ? description.split(DELIMITER) : undefined,
-      } as History_t;
+      } as Experience_t;
     })
     .filter((r) => r.display);
 };
 
-type HeaderToIdxMap_t = { [K in keyof History_t]: number };
+type HeaderToIdxMap_t = { [K in keyof Experience_t]: number };
 
 interface FetchResponse_t {
   range: string;

@@ -27,7 +27,7 @@ export interface Header_t {
   position: string;
 }
 
-export interface History_t {
+export interface Experience_t {
   type: ExperienceType_t;
   id: string;
   display: boolean;

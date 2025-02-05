@@ -10,25 +10,29 @@ import {
   contact,
   coverLetter,
   header,
-  history,
   skills,
   strengths,
   summary,
 } from 'content';
+import { Experience_t } from 'types';
 import { fetchData, parseSheetData } from 'utils';
 import './App.css';
 
 function App({ type }: { type: 'cover-letter' | 'resume' }) {
+  const [experience, setExperience] =
+    React.useState<Array<Experience_t> | null>(null);
+
   React.useEffect(() => {
     const getContent = async () => {
       const data = await fetchData();
       const content = parseSheetData(data);
-      console.log('00. ', content);
+      setExperience(content);
     };
     getContent();
-  });
+  }, []);
 
   const isResume = type === 'resume';
+  if (!experience) return <div>loading</div>;
   return (
     <div className='layout'>
       <Header content={header} contact={contact} />
@@ -40,7 +44,7 @@ function App({ type }: { type: 'cover-letter' | 'resume' }) {
       )}
 
       <Section sidebar title='History'>
-        <History content={history} />
+        <History content={experience} />
       </Section>
 
       <Section sidebar title='Skills'>

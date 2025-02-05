@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Icon from 'components/Icon';
-import { History_t } from 'types';
+import { Experience_t } from 'types';
 import { parseDate } from 'utils';
 import './History.css';
 
-export default function History({ content }: { content: Array<History_t> }) {
+export default function History({ content }: { content: Array<Experience_t> }) {
   return (
     <div className='timeline'>
       {content.map((item) => {
