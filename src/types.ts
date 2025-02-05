@@ -1,3 +1,10 @@
+export enum ExperienceType_t {
+  EMPLOYMENT = 'EMPLOYMENT',
+  EDUCATION = 'EDUCATION',
+  STRENGTH = 'STRENGTH',
+  VOLUNTEER = 'VOLUNTEER',
+}
+
 export interface Contact_t {
   // location: string;
   gmail: string;
@@ -21,14 +28,16 @@ export interface Header_t {
 }
 
 export interface History_t {
-  type: 'volunteer' | 'employment' | 'education';
+  type: ExperienceType_t;
   id: string;
+  display: boolean;
   organization: string;
   position: string;
   location: string;
   startDate: Date;
   endDate?: Date;
   stack?: Array<string>; // @TODO create icon enum
+  description?: Array<string>;
 }
 
 export interface Skills_t {

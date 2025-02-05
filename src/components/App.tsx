@@ -15,9 +15,19 @@ import {
   strengths,
   summary,
 } from 'content';
+import { fetchData, parseSheetData } from 'utils';
 import './App.css';
 
 function App({ type }: { type: 'cover-letter' | 'resume' }) {
+  React.useEffect(() => {
+    const getContent = async () => {
+      const data = await fetchData();
+      const content = parseSheetData(data);
+      console.log('00. ', content);
+    };
+    getContent();
+  });
+
   const isResume = type === 'resume';
   return (
     <div className='layout'>
