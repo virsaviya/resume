@@ -90,3 +90,7 @@ p.nudge,
 .experience {
   padding-top: var(--spacing-paragraphs);
 }
+
+.summary p {
+  margin-bottom: var(--spacing-paragraphs);
+}

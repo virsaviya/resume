@@ -1,0 +1,38 @@
+.experience .foo {
+  /* border: 1px dashed red; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-paragraphs);
+}
+
+.experience .title {
+  /* border: 1px dashed blue; */
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.experience .title h3 {
+  /* margin-right: var(--spacing-words); */
+}
+.experience .title span {
+  font-style: italic;
+  /* font-size: 9pt; */
+  /* margin-right: var(--spacing-words); */
+}
+
+.experience .details {
+  color: var(--text-faded);
+  /* border: 1px dashed green; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: end; */
+  justify-content: center;
+  align-items: end;
+  /* align-items: start; */
+}
+
+.experience .details * {
+  font-size: 8pt;
+  /* margin-left: var(--spacing-words); */
+}

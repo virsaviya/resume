@@ -30,7 +30,8 @@ export interface Header_t {
 export interface Experience_t {
   type: ExperienceType_t;
   id: string;
-  display: boolean;
+  expOrder: number;
+  histOrder: number;
   organization: string;
   position: string;
   location: string;
