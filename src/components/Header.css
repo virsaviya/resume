@@ -1,7 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin-right: var(--spacing-layout);
+  align-items: center;
 }
 .header h3 {
   color: var(--color-secondary);

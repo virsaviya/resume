@@ -418,8 +418,11 @@
 :root {
   --text: var(--color-slate-12);
   --text-faded: var(--color-slate-11);
-  --spacing-page-width: 8.5in;
-  --spacing-page-height: 11in;
+  --page-width: 8.5in;
+  --page-height: 11in;
+  --page-header: 1.25in;
+  --page-footer: calc(var(--page-header) / 4);
+  --page-sidebar: 3in;
   --spacing-layout: 24px; /* same as 0.25in */
   --spacing-paragraphs: 12px;
   --spacing-words: 4px;
@@ -429,7 +432,6 @@
   --color-bg: var(--color-indigo-2);
 
   --color-sidebar: var(--color-indigo-3);
-  --sidebar-width: 3in;
   --icon-size: 30px;
 }
 
@@ -441,6 +443,13 @@
   @page {
     size: letter portrait;
     margin: 0;
+    background-color: var(--color-bg);
+  }
+  thead {
+    display: table-header-group;
+  }
+  tfoot {
+    display: table-footer-group;
   }
 }
 
@@ -450,7 +459,7 @@
   box-sizing: border-box;
 }
 html {
-  background-color: gray;
+  background-color: var(--color-bg);
 }
 
 body {
@@ -460,7 +469,6 @@ body {
   color: var(--text);
   font-size: 10pt;
   line-height: 1.4;
-  background-color: var(--color-bg);
 }
 
 /* Header only */
@@ -525,9 +533,4 @@ p {
     font-display: swap;
     src: url(./assets/fonts/CoveredByYourGrace-Regular.ttf) format('opentype');
   }
-}
-
-.icon {
-  display: flex;
-  align-items: center;
 }

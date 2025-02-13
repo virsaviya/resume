@@ -1,0 +1,53 @@
+.header,
+.header-placeholder {
+  height: var(--page-header);
+}
+.footer,
+.footer-placeholder {
+  height: var(--page-footer);
+}
+
+/* sidebar is attached to the header 
+ so it renders on every page */
+.header::before {
+  content: '';
+  left: 0;
+  top: var(--page-header);
+  height: calc(var(--page-height) - var(--page-header) - var(--page-footer));
+  width: var(--page-sidebar);
+  position: absolute;
+
+  background-color: var(--color-sidebar);
+  border-radius: 0 var(--spacing-paragraphs) var(--spacing-paragraphs) 0;
+  border: 1px solid var(--color-primary-faded);
+  border-left: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: var(--page-width);
+  padding: var(--spacing-layout);
+  z-index: -1;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: var(--page-width);
+}
+
+.body {
+  min-height: calc(
+    var(--page-height) - var(--page-header) - var(--page-footer)
+  );
+  width: var(--page-width);
+  z-index: 1;
+
+  display: flex;
+}
+
+.sidebar .section,
+.experience-item {
+  break-inside: avoid;
+}

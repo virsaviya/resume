@@ -4,6 +4,7 @@ import CoverLetter from 'components/CoverLetter';
 import Experience from 'components/Experience';
 import Header from 'components/Header';
 import History from 'components/History';
+import Layout from 'components/Layout';
 import Section from 'components/Section';
 import Skills from 'components/Skills';
 import { contact, coverLetter, header, skills, summary } from 'content';
@@ -52,31 +53,32 @@ function App({ type }: { type: 'cover-letter' | 'resume' }) {
     </Section>
   );
   return (
-    <div className='layout'>
-      <Header content={header} contact={contact} />
-
-      {isResume && summarySection}
-
-      <Section sidebar title='History'>
-        <History content={history} />
-      </Section>
-
-      <Section sidebar title='Skills'>
-        <Skills content={skills} />
-      </Section>
-
-      {isResume ? (
-        <Section title='Experience'>
-          {experience.map((exp) => (
-            <Experience key={exp.id} content={exp} />
-          ))}
+    <Layout
+      header={<Header content={header} contact={contact} />}
+      footer={<div className='footer' />}>
+      <div className='sidebar'>
+        <Section title='History'>
+          <History content={history} />
         </Section>
-      ) : (
-        <Section title='Cover-Letter' hidden>
-          <CoverLetter content={coverLetter} />
+        <Section title='Skills'>
+          <Skills content={skills} />
         </Section>
-      )}
-    </div>
+      </div>
+      <div className='main'>
+        {summarySection}
+        {isResume ? (
+          <Section title='Experience'>
+            {experience.map((exp) => (
+              <Experience key={exp.id} content={exp} />
+            ))}
+          </Section>
+        ) : (
+          <Section title='Cover-Letter' hidden>
+            <CoverLetter content={coverLetter} />
+          </Section>
+        )}
+      </div>
+    </Layout>
   );
 }
 
