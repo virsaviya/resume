@@ -1,4 +1,8 @@
-.experience .foo {
+.experience-item {
+  break-inside: avoid;
+}
+
+.experience .experience-item-header {
   /* border: 1px dashed red; */
   display: flex;
   justify-content: space-between;

@@ -2,16 +2,14 @@ import React from 'react';
 
 import Icon from 'components/Icon';
 import { Experience_t } from 'types';
-import { parseDate } from 'utils';
+import { dateToRender } from 'utils';
 import './History.css';
 
 export default function History({ content }: { content: Array<Experience_t> }) {
   return (
     <div className='timeline'>
       {content.map((item) => {
-        const date = item.endDate
-          ? `${parseDate(item.startDate)} - ${parseDate(item.endDate)}`
-          : parseDate(item.startDate);
+        const date = dateToRender(item.startDate, item.endDate);
 
         return (
           <div className='timeline-event nudge' key={item.id}>
